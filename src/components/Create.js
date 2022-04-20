@@ -12,15 +12,13 @@ const Create = () => {
   const [ producto, setProducto ] = useState('')
   const [ cantidad, setCantidad ] = useState(0)
   const [ total, setTotal ] = useState(0)
-  const [ description, setDescription ] = useState('')
-  const [ stock, setStock ] = useState(0)
   const navigate = useNavigate()
 
   const productsCollection = collection(db, "products")
 
   const store = async (e) => {
     e.preventDefault()
-    await addDoc( productsCollection, { description: description, stock: stock } )
+    await addDoc( productsCollection, {  nombre: nombre, apellido:apellido, telefono: telefono, email: email, producto: producto, cantidad : cantidad, total : total} )
     navigate('/')
     //console.log(e.target[0].value)
   }
@@ -29,27 +27,72 @@ const Create = () => {
     <div className='container'>
         <div className='row'>
             <div className='col'>
-                <h1>Create Product</h1>
+                <h1>Agregar nuevo cliente</h1>
                  <form onSubmit={store}>
                     <div className='mb-3'>
-                        <label className='form-label'>Description</label>
+                        <label className='form-label'>Nombre</label>
                         <input
-                            value={description}
-                            onChange={ (e) => setDescription(e.target.value)} 
+                            value={nombre}
+                            onChange={ (e) => setNombre(e.target.value)} 
                             type="text"
                             className='form-control'
                         />
                     </div>  
                     <div className='mb-3'>
-                        <label className='form-label'>Stock</label>
+                        <label className='form-label'>Apellido</label>
                         <input
-                            value={stock}
-                            onChange={ (e)=> setStock(e.target.value)} 
-                            type="number"
+                            value={apellido}
+                            onChange={ (e)=> setApellido(e.target.value)} 
+                            type="text"
                             className='form-control'
                         />                 
                     </div>  
-                    <button type='submit' className='btn btn-primary'>Store</button>
+                    <div className='mb-3'>
+                        <label className='form-label'>Telefono</label>
+                        <input
+                            value={telefono}
+                            onChange={ (e)=> setTelefono(e.target.value)} 
+                            type="number"
+                            className='form-control'
+                        />                 
+                    </div>
+                    <div className='mb-3'>
+                        <label className='form-label'>Email</label>
+                        <input
+                            value={email}
+                            onChange={ (e)=> setEmail(e.target.value)} 
+                            type="text"
+                            className='form-control'
+                        />                 
+                    </div>
+                    <div className='mb-3'>
+                        <label className='form-label'>Producto</label>
+                        <input
+                            value={producto}
+                            onChange={ (e)=> setProducto(e.target.value)} 
+                            type="text"
+                            className='form-control'
+                        />                 
+                    </div>
+                    <div className='mb-3'>
+                        <label className='form-label'>Cantidad</label>
+                        <input
+                            value={cantidad}
+                            onChange={ (e)=> setCantidad(e.target.value)} 
+                            type="number"
+                            className='form-control'
+                        />                 
+                    </div>
+                    <div className='mb-3'>
+                        <label className='form-label'>Total</label>
+                        <input
+                            value={total}
+                            onChange={ (e)=> setTotal(e.target.value)} 
+                            type="number"
+                            className='form-control'
+                        />                 
+                    </div>          
+                    <button type='submit' className='btn btn-primary'>Guardar</button>
                  </form>   
             </div>
         </div>
