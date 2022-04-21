@@ -32,13 +32,13 @@ const Show = () => {
   //5 - Funcion de confirmacion para Sweet Alert 2
   const confirmDelete = (id) => {
     MySwal.fire({
-      title: '¿Elimina el cliente?',
+      title: '¿Eliminar el cliente?',
       text: "No seras capaz de restaurarlo",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Si, eliminalo'
+      confirmButtonText: 'Si, eliminalo!'
     }).then((result) => {
       if (result.isConfirmed) { 
         //llamar a la fcion para eliminar   
@@ -99,6 +99,7 @@ const Show = () => {
           <div className="d-grid gap-2">
             <Link to="/create" className='btn btn-success mt-2 mb-2'>Agregar</Link>    
           </div>
+          
         </div>
       </div>
     </div>

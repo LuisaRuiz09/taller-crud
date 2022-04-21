@@ -11,7 +11,6 @@ const Edit = () => {
     const [ producto, setProducto ] = useState('')
     const [ cantidad, setCantidad ] = useState(0)
     const [ total, setTotal ] = useState(0)
-
     const navigate = useNavigate()    
     const {id} = useParams()
 
@@ -49,7 +48,7 @@ const Edit = () => {
         <div className='container'>
         <div className='row'>
             <div className='col'>
-                <h1>Editar producto</h1>
+                <h1>Editar cliente</h1>
                  <form onSubmit={update}>
                  <div className='mb-3'>
                         <label className='form-label'>Nombre</label>
@@ -121,6 +120,7 @@ const Edit = () => {
                         />                 
                     </div>  
                     <button type='submit' className='btn btn-primary'>Actualizar</button>
+                    <p></p>
                  </form>   
             </div>
         </div>

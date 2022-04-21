@@ -93,6 +93,8 @@ const Create = () => {
                         />                 
                     </div>          
                     <button type='submit' className='btn btn-primary'>Guardar</button>
+                    
+                    <p></p>
                  </form>   
             </div>
         </div>
