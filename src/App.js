@@ -7,6 +7,7 @@ import Edit from './components/Edit';
 //importar el router
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
+//colocando componentes 
 function App() {
   return (
     <div className="App">    
